@@ -1,0 +1,78 @@
+Feature 'smoke':
+False: 0
+True: 1
+Unknown: -1
+------------------------------
+Feature 'drink':
+False: 0
+True: 1
+Unknown: -1
+------------------------------
+Feature 'background_father':
+AUSTRIA: 0
+BRASIL: 1
+BRAZIL: 2
+CZECH: 3
+GERMANY: 4
+ISRAEL: 5
+ITALY: 6
+NETHERLANDS: 7
+POLAND: 8
+POMERANIA: 9
+PORTUGAL: 10
+SPAIN: 11
+Unknown: -1
+------------------------------
+Feature 'background_mother':
+BRAZIL: 0
+FRANCE: 1
+GERMANY: 2
+ITALY: 3
+NETHERLANDS: 4
+NORWAY: 5
+POLAND: 6
+POMERANIA: 7
+PORTUGAL: 8
+SPAIN: 9
+Unknown: -1
+------------------------------
+Feature 'pesticide':
+False: 0
+True: 1
+Unknown: -1
+------------------------------
+Feature 'gender':
+FEMALE: 0
+MALE: 1
+Unknown: -1
+------------------------------
+Feature 'skin_cancer_history':
+False: 0
+True: 1
+Unknown: -1
+------------------------------
+Feature 'cancer_history':
+False: 0
+True: 1
+Unknown: -1
+------------------------------
+Feature 'has_piped_water':
+False: 0
+True: 1
+Unknown: -1
+------------------------------
+Feature 'has_sewage_system':
+False: 0
+True: 1
+Unknown: -1
+------------------------------
+Feature 'grew':
+FALSE: 0
+TRUE: 1
+Unknown: -1
+------------------------------
+Feature 'changed':
+FALSE: 0
+TRUE: 1
+Unknown: -1
+------------------------------
