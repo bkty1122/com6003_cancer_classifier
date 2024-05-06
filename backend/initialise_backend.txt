@@ -1,0 +1,4 @@
+Install packages: pip install -r requirements.txt
+Initialise environment: myenv\Scripts\activate
+Run the app: python app.py
+Deactivate environment: deactivate

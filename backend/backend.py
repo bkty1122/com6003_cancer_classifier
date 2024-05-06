@@ -7,7 +7,7 @@ import io
 app = Flask(__name__)
 
 # Load your trained model (ensure the path matches)
-model = joblib.load('path_to_your_model.joblib')
+model = joblib.load('model_resultfinal_stack_6.joblib')
 
 @app.route('/predict', methods=['POST'])
 def predict():
