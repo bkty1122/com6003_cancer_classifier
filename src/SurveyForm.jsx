@@ -52,7 +52,7 @@ const SurveyForm = () => {
 
     return (
         <div className="survey-form">
-            <h1>User Health Survey</h1>
+            <h1>Cancer Screening Tool</h1>
             <form onSubmit={handleSubmit}>
                 {Object.keys(options).map(key => (
                     <div className="form-group" key={key}>
