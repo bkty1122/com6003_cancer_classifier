@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import SurveyForm from './SurveyForm';
+import PredictionForm from './SurveyForm';
 
 function App() {
   return (
     <div className="App">
-      <SurveyForm />
+      <header className="App-header">
+        <PredictionForm />
+      </header>
     </div>
   );
 }
