@@ -129,4 +129,3 @@ yarn-error.log*
 # ignore myenv
 myenv
 env
-backend/VGG16Model2.h5

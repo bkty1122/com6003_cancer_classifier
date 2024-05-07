@@ -57,7 +57,22 @@ function PredictionForm() {
             alert(`Prediction: ${response.data.prediction}`);
         } catch (error) {
             console.error('Error:', error);
-            alert('Failed to get prediction');
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                console.error('Error status', error.response.status);
+                console.error('Error data', error.response.data);
+                const backendMessage = error.response.data.message || 'Error processing your request';
+                alert(`Failed to get prediction: ${backendMessage}`);
+            } else if (error.request) {
+                // The request was made but no response was received
+                console.error('Error request', error.request);
+                alert('No response from the server');
+            } else {
+                // Something happened in setting up the request that triggered an Error
+                console.error('Error message', error.message);
+                alert('Error sending request');
+            }
         }
     };
 
