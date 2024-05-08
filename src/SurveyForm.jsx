@@ -44,35 +44,35 @@ function PredictionForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const data = new FormData();
+
+        const formPayload = new FormData();
+
+        // Append image if it exists
         if (image) {
-            data.append('image', image);
+            formPayload.append('image', image);
         }
+
+        // Append other form data
         Object.keys(formData).forEach(key => {
-            data.append(key, formData[key]);
+            formPayload.append(key, formData[key]);
         });
 
         try {
-            const response = await axios.post('http://localhost:5000/predict', data);
-            alert(`Prediction: ${response.data.prediction}`);
+            const response = await fetch('https://special-doodle-674g9p6gp5qcrp7r-5000.app.github.dev/predict', {
+                method: 'POST',
+                body: formPayload,
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log('Success:', data);
+            alert(`Prediction: ${data.prediction}`);
         } catch (error) {
             console.error('Error:', error);
-            if (error.response) {
-                // The request was made and the server responded with a status code
-                // that falls out of the range of 2xx
-                console.error('Error status', error.response.status);
-                console.error('Error data', error.response.data);
-                const backendMessage = error.response.data.message || 'Error processing your request';
-                alert(`Failed to get prediction: ${backendMessage}`);
-            } else if (error.request) {
-                // The request was made but no response was received
-                console.error('Error request', error.request);
-                alert('No response from the server');
-            } else {
-                // Something happened in setting up the request that triggered an Error
-                console.error('Error message', error.message);
-                alert('Error sending request');
-            }
+            alert('Failed to submit form: ' + error.message);
         }
     };
 

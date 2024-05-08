@@ -16,7 +16,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 image_model_path = os.path.join(dir_path, 'VGG16Model2.h5')
 text_model_path = os.path.join(dir_path, 'text_model.pkl')
 
-img_model = load_model(image_model_path)
+# img_model = load_model(image_model_path)
 text_model = pickle.load(open(text_model_path, 'rb'))
 
 def img_preprocessing(image_file):
@@ -32,6 +32,11 @@ def predict_image(model, img):
     prediction = model.predict(img)  # Predict the image
     return prediction
 
+@app.before_request
+def log_request_info():
+    app.logger.debug('Headers: %s', request.headers)
+    app.logger.debug('Body: %s', request.get_data())
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
@@ -41,10 +46,10 @@ def predict():
         image_file = request.files['image']
         image = img_preprocessing(image_file)
 
-        image_prediction = predict_image(img_model, image)
+        # image_prediction = predict_image(img_model, image)
 
         form_data = request.form
-        features = [float(form_data.get(field)) for field in [
+        features = [int(form_data.get(field)) for field in [
             'smoke', 'drink', 'background_father', 'background_mother',
             'pesticide', 'gender', 'skin_cancer_history', 'cancer_history',
             'has_piped_water', 'has_sewage_system', 'grew', 'changed'
@@ -53,7 +58,8 @@ def predict():
         features_array = np.array([features])
         text_prediction = text_model.predict(features_array)
 
-        final_prediction = np.concatenate((image_prediction, text_prediction), axis=None)
+        # final_prediction = np.concatenate((image_prediction, text_prediction), axis=None)
+        final_prediction = text_prediction
         return jsonify({'prediction': str(final_prediction)})
 
     except Exception as e:
