@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/com6003_cancer_classifier.github.io/',
+  base: '/com6003_cancer_classifier/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
