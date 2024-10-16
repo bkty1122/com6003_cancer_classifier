@@ -12,11 +12,6 @@
     "react-dom": "^18.2.0",
     "web-vitals": "^3.1.0"
   },
-  "overrides": {
-    "@svgr/webpack": "^8.0.1",
-    "@adobe/css-tools": "^4.3.1",
-    "postcss": "^8.4.31"
-  },
   "scripts": {
     "start": "BROWSER=None WDS_SOCKET_PORT=0 vite --port 3000",
     "build": "vite build",
@@ -24,6 +19,11 @@
     "test": "vitest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
+  },
+  "overrides": {
+    "@svgr/webpack": "^8.0.1",
+    "@adobe/css-tools": "^4.3.1",
+    "postcss": "^8.4.31"
   },
   "eslintConfig": {
     "extends": [
@@ -46,9 +46,9 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.1.1",
     "cross-env": "^7.0.3",
+    "gh-pages": "^6.2.0",
     "jsdom": "^22.1.0",
     "vite": "^4.5.3",
-    "vitest": "^0.34.6",
-    "gh-pages": "^6.0.0"
+    "vitest": "^0.34.6"
   }
 }
