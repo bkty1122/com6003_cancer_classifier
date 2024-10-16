@@ -15,7 +15,7 @@
   "scripts": {
     "start": "BROWSER=None WDS_SOCKET_PORT=0 vite --port 3000",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
     "preview": "vite preview",
     "test": "vitest",
     "predeploy": "npm run build",
