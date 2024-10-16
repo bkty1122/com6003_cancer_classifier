@@ -2,7 +2,7 @@
   "name": "codespaces-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bkty1122.github.io/com6003_cancer_classifier.github.io/",
+  "homepage": "https://bkty1122.github.io/com6003_cancer_classifier",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
