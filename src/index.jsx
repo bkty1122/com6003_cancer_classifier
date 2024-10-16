@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 
-const basename = '/com6003_cancer_classifier.github.io';
+const basename = '/com6003_cancer_classifier';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
